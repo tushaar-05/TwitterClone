@@ -6,6 +6,7 @@ export default function SignupModal({ onClose }) {
     name: "",
     email: "",
     username: "",
+    password: "",
     month: "",
     day: "",
     year: "",
@@ -29,8 +30,6 @@ export default function SignupModal({ onClose }) {
     );
   }
 
-  console.log(years)
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -39,6 +38,7 @@ export default function SignupModal({ onClose }) {
     form.name &&
     form.email &&
     form.username &&
+    form.password &&
     form.month &&
     form.day &&
     form.year;
@@ -60,7 +60,7 @@ export default function SignupModal({ onClose }) {
 
         <h2 className="text-4xl font-bold mb-8">Create your account</h2>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3.5">
           
           <input
             name="name"
@@ -86,6 +86,15 @@ export default function SignupModal({ onClose }) {
             onChange={handleChange}
             type="text"
             placeholder="Username"
+            className="w-full bg-black border border-gray-700 rounded-md px-4 py-4 text-lg focus:outline-none focus:border-gray-500"
+          />
+
+          <input
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            type="password"
+            placeholder="Password"
             className="w-full bg-black border border-gray-700 rounded-md px-4 py-4 text-lg focus:outline-none focus:border-gray-500"
           />
 

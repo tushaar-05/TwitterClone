@@ -51,7 +51,7 @@ export default function Home() {
                 <span className="font-normal text-[14px]">Sign up with Google</span>
               </button>
               <button className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
-                <img src="Apple_logo_black.svg" alt="apple" className="w-5 h-[22px]" />
+                <img src="Apple_logo_black.svg" alt="apple" className="w-5 h-5.5" />
                 <span className="font-normal text-[14px]">Sign up with Apple</span>
               </button>
               <div className="flex items-center gap-2 my-2">
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-4 py-4 text-center text-[#657786] text-[11px] flex flex-wrap justify-center">
+      <div className="px-4 py-4 text-center text-[#71767c] text-[11px] flex flex-wrap justify-center">
         {mainPageLinks.map((link, index) => (
           <span key={index} className="flex items-center">
             <a href={link.path} className="hover:underline">
@@ -85,14 +85,15 @@ export default function Home() {
             </a>
 
             {index !== mainPageLinks.length - 1 && (
-              <span className="mx-2 h-[16px] w-[1px] bg-[#657786] text-[#657786]"></span>
+              <span className="mx-2 h-3.5 w-px bg-[#71767c] text-[#657786]"></span>
             )}
           </span>
         ))}
       </div>
 
       {showSignup && (<SignupModal onClose={() => setShowSignup(false)} />)}
-      {showLogin && (<LoginModal onClose={() => setShowLogin(false)} />)}
+      {showLogin && (<LoginModal onClose={() => setShowLogin(false)} openSignup={() => {setShowLogin(false); setShowSignup(true);}}/>
+    )}
         
     </div>
   );
