@@ -1,4 +1,7 @@
+import React, { useState } from "react";
 import "../styles/global.css";
+import SignupModal from "../components/auth/SignupModal";
+import LoginModal from "../components/auth/LoginModal";
 
 const mainPageLinks = [
   { name: "About", path: "/" },
@@ -23,6 +26,9 @@ const mainPageLinks = [
 ];
 
 export default function Home() {
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
   return (
     <div className="min-h-screen w-full bg-black text-white flex flex-col justify-between">
       <div className="flex flex-col md:flex-row flex-1">
@@ -42,18 +48,18 @@ export default function Home() {
 
               <button className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
                 <img src="GoogleLogo.svg" alt="google" className="w-5 h-5" />
-                <span className="font-normal">Sign up with Google</span>
+                <span className="font-normal text-[14px]">Sign up with Google</span>
               </button>
               <button className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
                 <img src="Apple_logo_black.svg" alt="apple" className="w-5 h-[22px]" />
-                <span className="font-normal">Sign up with Apple</span>
+                <span className="font-normal text-[14px]">Sign up with Apple</span>
               </button>
               <div className="flex items-center gap-2 my-2">
                 <div className="h-px bg-[#eeeeee84] flex-1"></div>
                 <span className="text-gray-400 text-sm">OR</span>
                 <div className="h-px bg-[#eeeeee84] flex-1"></div>
               </div>
-              <button className="bg-white text-black font-medium py-3 rounded-full cursor-pointer">
+              <button onClick={() => setShowSignup(true)} className="bg-white text-black text-[14px] font-medium py-3 rounded-full cursor-pointer">
                 Create account
               </button>
               <p className="text-xs text-[#71767B]">
@@ -63,7 +69,7 @@ export default function Home() {
 
             <div className="mt-4 w-72.5">
               <p className="text-white font-bold">Already have an account?</p>
-              <button className="mt-2 w-full border border-gray-600 py-3 rounded-full font-semibold cursor-pointer">
+              <button onClick={() => setShowLogin(true)} className="mt-2 w-full border border-gray-600 py-3 text-[14px] rounded-full font-semibold cursor-pointer">
                 Sign in
               </button>
             </div>
@@ -71,7 +77,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-4 py-4 text-center text-[#657786] text-[12px] flex flex-wrap justify-center">
+      <div className="px-4 py-4 text-center text-[#657786] text-[11px] flex flex-wrap justify-center">
         {mainPageLinks.map((link, index) => (
           <span key={index} className="flex items-center">
             <a href={link.path} className="hover:underline">
@@ -84,6 +90,10 @@ export default function Home() {
           </span>
         ))}
       </div>
+
+      {showSignup && (<SignupModal onClose={() => setShowSignup(false)} />)}
+      {showLogin && (<LoginModal onClose={() => setShowLogin(false)} />)}
+        
     </div>
   );
 }
