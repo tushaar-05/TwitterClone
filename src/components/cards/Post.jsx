@@ -4,9 +4,9 @@ import "../../styles/global.css"
 
 export default function PostCard() {
   return (
-    <div className="max-w-2xl mx-auto bg-black text-white p-4 rounded-xl border border-gray-800">
+    <div className="max-w-2xl mx-auto bg-black text-white p-4 border border-gray-800">
       
-      {true&&<p className="text-gray-400 text-sm mb-2">📌 Pinned by Community mods</p>} 
+      {true &&<p className="text-gray-400 text-sm mb-2">📌 Pinned by Community mods</p>} 
 
       <div className="flex items-center gap-3 mb-3">
         <img
