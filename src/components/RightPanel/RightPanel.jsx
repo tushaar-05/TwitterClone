@@ -1,8 +1,13 @@
 import React from 'react'
+import TodaysNews from './TodaysNews'
+import Searchbar from './Searchbar'
 
 const RightPanel = () => {
   return (
-    <div>RightPanel</div>
+    <div className='pt-10'>
+      <Searchbar/>
+      <TodaysNews/>
+    </div>
   )
 }
 
