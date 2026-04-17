@@ -1,5 +1,6 @@
 import React from "react";
 import { MessageCircle, Repeat2, Heart, BarChart2, Bookmark, Share } from "lucide-react";
+import "../../styles/global.css"
 
 export default function PostCard() {
   return (
