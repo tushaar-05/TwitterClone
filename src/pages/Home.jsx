@@ -46,11 +46,11 @@ export default function Home() {
             </h2>
             <div className="flex flex-col gap-3 w-72.5">
 
-              <button className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
+              <button onClick={() => setShowLogin(true)} className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
                 <img src="GoogleLogo.svg" alt="google" className="w-5 h-5" />
                 <span className="font-normal text-[14px]">Sign up with Google</span>
               </button>
-              <button className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
+              <button onClick={() => setShowLogin(true)} className="flex items-center justify-center gap-3 bg-white text-black py-3 rounded-full font-semibold cursor-pointer">
                 <img src="Apple_logo_black.svg" alt="apple" className="w-5 h-5.5" />
                 <span className="font-normal text-[14px]">Sign up with Apple</span>
               </button>
@@ -91,7 +91,7 @@ export default function Home() {
         ))}
       </div>
 
-      {showSignup && (<SignupModal onClose={() => setShowSignup(false)} />)}
+      {showSignup && (<SignupModal onClose={() => setShowSignup(false)} openLogin = {() => {setShowLogin(true)}} closeSignup = {() => setShowSignup(false)}/>)}
       {showLogin && (<LoginModal onClose={() => setShowLogin(false)} openSignup={() => {setShowLogin(false); setShowSignup(true);}}/>
     )}
         
