@@ -2,6 +2,7 @@ import React from "react";
 import TodaysNews from "./TodaysNews";
 import Searchbar from "./Searchbar";
 import WhatsHappening from "./WhatsHappening";
+import FollowSuggestion from "./FollowSuggestion";
 
 const RightPanel = () => {
   return (
@@ -9,6 +10,7 @@ const RightPanel = () => {
       <Searchbar />
       <TodaysNews />
       <WhatsHappening />
+      <FollowSuggestion/>
     </div>
   );
 };
