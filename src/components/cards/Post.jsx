@@ -8,7 +8,6 @@ export default function PostCard() {
       
       {true&&<p className="text-gray-400 text-sm mb-2">📌 Pinned by Community mods</p>} 
 
-      {/* Header */}
       <div className="flex items-center gap-3 mb-3">
         <img
           src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"
@@ -34,16 +33,13 @@ export default function PostCard() {
         #javascript #coding #programming #tech #ai #udemy
       </p>
 
-      {/* Image Card */}
       <div className="rounded-2xl overflow-hidden border border-gray-700 mb-4">
         <div className="flex">
           
-          {/* Left yellow */}
           <div className="bg-yellow-400 w-1/2 flex items-center justify-center">
             <h1 className="text-7xl font-bold text-black">JS</h1>
           </div>
 
-          {/* Right image */}
           <div className="w-1/2 relative">
             <img
               src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f"
@@ -51,7 +47,6 @@ export default function PostCard() {
               className="w-full h-full object-cover"
             />
 
-            {/* Bottom overlay text */}
             <div className="absolute bottom-2 left-2 right-2">
               <span className="bg-black/70 text-xs px-2 py-1 rounded">
                 100+ JavaScript Coding Practice Test Questions Answers 2026
