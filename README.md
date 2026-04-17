@@ -70,6 +70,7 @@ TwitterClone/
 ### Home Feed Page
 | Component | Description | Owner | Status |
 |-----------|-------------|-------|--------|
+| `Main Auth Page` | Create account and Login modal, save of LocalStorage, navigate to Feed page  | **Tushar** | [ DONE ] |
 | `Sidebar` | Left sidebar navigation with logo, links | **Tushar** | [ ] |
 
 ---
