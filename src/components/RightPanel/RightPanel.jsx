@@ -1,8 +1,11 @@
 import React from 'react'
+import TodaysNews from './TodaysNews'
 
 const RightPanel = () => {
   return (
-    <div>RightPanel</div>
+    <div className='pt-10'>
+      <TodaysNews/>
+    </div>
   )
 }
 
