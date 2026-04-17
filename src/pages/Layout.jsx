@@ -18,7 +18,7 @@ const Layout = () => {
         </main>
 
         <aside className="w-[350px] pl-6 hidden lg:block">
-          <div className="sticky top-0 h-screen">
+          <div className="sticky top-0 ">
             <RightPanel />
           </div>
         </aside>
