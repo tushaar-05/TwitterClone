@@ -1,11 +1,8 @@
 import React from 'react'
-import Layout from "./Layout"
 
 const Feed = () => {
   return (
-    <>
-      <Layout />
-    </>
+    <div>Feed</div>
   )
 }
 
