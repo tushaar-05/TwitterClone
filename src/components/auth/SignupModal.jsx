@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import "../../styles/global.css";
 
-export default function SignupModal({ onClose }) {
+export default function SignupModal({ onClose , openLogin, closeSignup}) {
+  const [showToast, setShowToast] = useState(false);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -11,6 +13,20 @@ export default function SignupModal({ onClose }) {
     day: "",
     year: "",
   });
+
+  useEffect(() => {
+    localStorage.setItem("formData", JSON.stringify(form));
+  }, [form]);
+
+  const handleNext = () => {
+    if (!isFormComplete) return;
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+      closeSignup();
+      openLogin();
+    }, 2000);
+  };
 
   const days = [];
   for (let i = 1; i <= 31; i++) {
@@ -45,6 +61,12 @@ export default function SignupModal({ onClose }) {
 
   return (
     <div className="fixed inset-0 bg-[#5B708366] flex items-center justify-center z-50">
+      {showToast && (
+        <div className="fixed top-3 left-1/2 -translate-x-1/2 bg-[#1d9bf0] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg z-[100] transition-all">
+          Account created successfully!
+        </div>
+      )}
+
       <div className="absolute inset-0" onClick={onClose}></div>
       <div className="bg-black w-full max-w-2xl rounded-2xl px-20 pb-10 pt-6 relative shadow-xl border border-gray-800 z-10">
         <button
@@ -150,7 +172,7 @@ export default function SignupModal({ onClose }) {
           </div>
 
           <button
-            onClick={() => {console.log(form)}}
+            onClick={handleNext}
             className={`
               mt-10 py-4 rounded-full text-lg font-bold
               ${
