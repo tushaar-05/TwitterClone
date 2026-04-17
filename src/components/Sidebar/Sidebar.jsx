@@ -13,17 +13,17 @@ import {
 } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { label: 'Home', active: true, icon: <Home /> },
-  { label: 'Explore', icon: <Search /> },
-  { label: 'Notifications', icon: <Bell />, badge: 3 },
-  { label: 'Follow', icon: <Users /> },
-  { label: 'Chat', icon: <MessageCircle /> },
-  { label: 'Grok', icon: <Sparkles /> },
-  { label: 'Bookmarks', icon: <Bookmark /> },
-  { label: 'Creator Studio', icon: <Rocket /> },
-  { label: 'Premium', icon: <Sparkles /> },
-  { label: 'Profile', icon: <User /> },
-  { label: 'More', icon: <MoreHorizontal /> },
+  { label: 'Home', active: true, icon: <Home /> , path: "/"},
+  { label: 'Explore', icon: <Search /> , path: "/explore"},
+  { label: 'Notifications', icon: <Bell />, badge: 3 , path: "/"},
+  { label: 'Follow', icon: <Users /> , path: "/"},
+  { label: 'Chat', icon: <MessageCircle /> , path: "/"},
+  { label: 'Grok', icon: <Sparkles /> , path: "/"},
+  { label: 'Bookmarks', icon: <Bookmark /> , path: "/"},
+  { label: 'Creator Studio', icon: <Rocket /> , path: "/"},
+  { label: 'Premium', icon: <Sparkles /> , path: "/"},
+  { label: 'Profile', icon: <User /> , path: "/"},
+  { label: 'More', icon: <MoreHorizontal /> , path: "/"},
 ]
 
 const Sidebar = () => {
@@ -34,10 +34,10 @@ const Sidebar = () => {
       </div>
 
       <nav className="flex flex-col gap-1">
-        {NAV_ITEMS.map(({ label, active, icon, badge }) => (
+        {NAV_ITEMS.map(({ label, active, icon, badge, path}) => (
           <a
             key={label}
-            href="#"
+            href={path}
             className={`flex items-center gap-4 px-4 py-3 rounded-full text-lg hover:bg-white/10 transition-colors ${
               active ? 'font-bold' : 'font-normal'
             }`}

@@ -1,13 +1,15 @@
 import React from 'react'
 import PostCard from "../cards/Post"
 import FeedTop from "./FeedTop"
+import CreatePost from "./CreatePost"
 
 const Feed = () => {
 
 
   return (
     <div>
-      <FeedTop />
+      <FeedTop /> 
+      < CreatePost />
       
       <div>
         <PostCard />
@@ -15,7 +17,6 @@ const Feed = () => {
         <PostCard />
         <PostCard />
       </div>
-      
     </div>
   )
 }
