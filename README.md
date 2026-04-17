@@ -67,11 +67,15 @@ TwitterClone/
 ---
 
 ## Pages & Component Ownership
-### Home Feed Page
+### Auth Page
 | Component | Description | Owner | Status |
 |-----------|-------------|-------|--------|
 | `Main Auth Page` | Create account and Login modal, save of LocalStorage, navigate to Feed page  | **Tushar** | [ DONE ] |
-| `Sidebar` | Left sidebar navigation with logo, links | **Tushar** | [ ] |
+
+### Main Feed Page
+| `Sidebar` | Left sidebar navigation with logo, links | **Tushar** | [ Done ] |
+| `Post Card` | Heading, username, image and icons | **Divyam Nailwal** | [ Done ] |
+
 
 ---
 
