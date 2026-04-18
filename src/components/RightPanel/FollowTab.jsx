@@ -10,7 +10,7 @@ const FollowTab = () => {
             <div className='flex items-center text-[#71767b]'>@PMOIndia</div>
         </div>
         <div className='w-2/5 h-full flex justify-end items-center'>
-            <button className='w-20 h-8 rounded-full font-bold text-sm bg-white text-black'>Follow</button>
+            <button className='w-20 h-8 rounded-full font-bold text-sm bg-white text-black hover:cursor-pointer'>Follow</button>
         </div>
     </div>
   )
