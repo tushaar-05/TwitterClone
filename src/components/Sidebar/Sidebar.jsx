@@ -22,7 +22,7 @@ const NAV_ITEMS = [
   { label: 'Bookmarks', icon: <Bookmark /> , path: "/"},
   { label: 'Creator Studio', icon: <Rocket /> , path: "/"},
   { label: 'Premium', icon: <Sparkles /> , path: "/"},
-  { label: 'Profile', icon: <User /> , path: "/"},
+  { label: 'Profile', icon: <User /> , path: "/profile"},
   { label: 'More', icon: <MoreHorizontal /> , path: "/"},
 ]
 
