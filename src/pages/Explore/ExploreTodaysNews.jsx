@@ -9,6 +9,7 @@ const ExploreTodaysNews = () => {
     category: "Other",
     time: "1 day ago",
     posts: "6.6K",
+    
     avatars: [
       "https://randomuser.me/api/portraits/men/11.jpg",
       "https://randomuser.me/api/portraits/women/12.jpg"

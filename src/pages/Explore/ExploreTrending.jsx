@@ -50,7 +50,7 @@ const ExploreTrending = () => {
   return (
     <div className='w-full h-92 px-4 pt-4'>
         {trendingData.map((item) => {
-            return <TrendingTab key={item.id} category={item.category} location={item.location} title={item.title}/>
+            return <TrendingTab key={item.id} id={item.id} category={item.category} location={item.location} title={item.title}/>
         })}
     </div>
   )

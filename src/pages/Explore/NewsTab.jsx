@@ -3,7 +3,7 @@ import React from "react";
 const NewsTab = (props) => {
   return (
     <div className="w-full h-1/3 mb-2  hover:bg-white/5 transition duration-200 cursor-pointer rounded-sm flex flex-col justify-around">
-      <div className="w-full h-fit text-md font-extrabold leading-5.5">
+      <div className="w-full h-fit text-md font-bold leading-5.5">
         {props.title}
       </div>
       <div className="w-full h-1/3 flex items-center">
