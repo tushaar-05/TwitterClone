@@ -2,6 +2,7 @@ import React from 'react'
 import ExploreSearchbar from './ExploreSearchbar'
 import ExplorePageCategoryTab from './ExplorePageCategoryTab'
 import ExploreTodaysNews from './ExploreTodaysNews'
+import ExploreTrending from './ExploreTrending'
 
 const ExploreMain = () => {
   return (
@@ -9,6 +10,7 @@ const ExploreMain = () => {
         <ExploreSearchbar/>
         <ExplorePageCategoryTab/>
         <ExploreTodaysNews/>
+        <ExploreTrending/>
     </div>
   )
 }
