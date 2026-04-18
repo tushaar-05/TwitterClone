@@ -2,7 +2,7 @@ import React from 'react'
 import NewsTab from './NewsTab';
 
 const CategoryEntertainment = () => {
- const entertainmentData = [
+const entertainmentData = [
   {
     id: "1",
     title: "Bhooth Bangla Opens Strong with ₹15.75 Crore on Day One",
