@@ -1,10 +1,10 @@
 import React from "react";
 
-const News = () => {
+const NewsTab = (props) => {
   return (
-    <div className="w-full h-1/3 mb-2  hover:bg-white/5 transition duration-200 cursor-pointer rounded-sm">
-      <div className="w-full h-5/11 text-sm font-bold leading-5.5">
-        Shreyas Iyer Praises RCB Captain Rajat Patidar in IPL Chat
+    <div className="w-full h-1/3 mb-2  hover:bg-white/5 transition duration-200 cursor-pointer rounded-sm flex flex-col justify-around">
+      <div className="w-full h-fit text-md font-bold leading-5.5">
+        {props.title}
       </div>
       <div className="w-full h-1/3 flex items-center">
         <img
@@ -20,11 +20,11 @@ const News = () => {
           className="w-6 h-6 bg-orange-500 rounded-full -ml-2.5"
         ></img>
         <div className="text-[#54585b] text-sm ml-2">
-          9 hours ago &bull; Sports 14.2k &bull; posts
+          {props.time}  &bull; {props.category} &bull; {props.posts} posts
         </div>
       </div>
     </div>
   );
 };
 
-export default News;
+export default NewsTab;
