@@ -1,9 +1,9 @@
-import "../styles/global.css"
-import Sidebar from "../components/Sidebar/Sidebar";
-import Feed from "../components/Feed/Feed";
-import RightPanel from "../components/RightPanel/RightPanel";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import ExploreMain from "./ExploreMain";
+import ExploreRightPanel from "./ExploreRightPanel";
+import React from "react";
 
-const Layout = () => {
+const Explore = () => {
   return (
     <div className="flex justify-center bg-black text-white min-h-screen">
       <div className="flex w-full max-w-[1265px]">
@@ -14,11 +14,12 @@ const Layout = () => {
         </aside>
 
         <main className="flex-1 max-w-[600px] border-l border-r border-[#2f3336]">
-          <Feed />
+          <ExploreMain/>
         </main>
+
         <aside className="w-[350px] pl-6 hidden lg:block">
           <div className="sticky top-0 ">
-            <RightPanel />
+            <ExploreRightPanel/>
           </div>
         </aside>
       </div>
@@ -26,4 +27,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Explore;

@@ -73,8 +73,11 @@ TwitterClone/
 | `Main Auth Page` | Create account and Login modal, save of LocalStorage, navigate to Feed page  | **Tushar** | [ DONE ] |
 
 ### Main Feed Page
-| `Sidebar` | Left sidebar navigation with logo, links | **Tushar** | [ Done ] |
-| `Post Card` | Heading, username, image and icons | **Divyam Nailwal** | [ Done ] |
+| Component | Description | Owner | Status |
+|-----------|-------------|-------|--------|
+| `Sidebar` | Left sidebar navigation with logo, links | **Tushar** | [ DONE ] |
+| `Post Card` | Heading, username, image and icons | **Divyam Nailwal** | [ DONE ] |
+
 
 
 ---
