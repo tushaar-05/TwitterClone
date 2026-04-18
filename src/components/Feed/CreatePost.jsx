@@ -1,6 +1,11 @@
 import React from "react";
 
-const ICONS = []
+import {
+  Image,
+
+} from "lucide-react"
+
+const ICONS = [<Image color="blue" />, <Image />, <Image />]
 
 const CreatePost = () => {
   return (
@@ -11,7 +16,7 @@ const CreatePost = () => {
 
         <input
           type="text"
-          placeholder="What’s happening?"
+          placeholder="What's happening?"
           className="w-full bg-transparent outline-none text-lg placeholder-gray-500"
         />
       </div>
@@ -21,7 +26,10 @@ const CreatePost = () => {
       <div className="flex items-center justify-between">
         
         <div className="flex gap-4 text-blue-500">
-          <button>h</button>
+          {ICONS.map((icon) => (
+            <button>{icon}</button>
+          ))}
+          
         </div>
 
         <button className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full font-semibold disabled:opacity-50">
