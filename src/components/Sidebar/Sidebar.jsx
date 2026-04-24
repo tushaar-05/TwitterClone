@@ -14,7 +14,7 @@ import {
 } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { label: 'Home', icon: <Home />, path: "/" },
+  { label: 'Home', icon: <Home />, path: "/feed" },
   { label: 'Explore', icon: <Search />, path: "/explore" },
   { label: 'Notifications', icon: <Bell />, badge: 3, path: "/notifications" },
   { label: 'Follow', icon: <Users />, path: "/follow" },

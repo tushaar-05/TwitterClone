@@ -1,24 +1,24 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Sidebar from './components/Sidebar/Sidebar'
-import Feed from "./pages/Feed"
-import Home from './pages/Home'
-import Explore from './pages/Explore'
-import Profile from "./pages/Profile"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Feed from "./pages/Feed";
+import Explore from "./pages/Explore";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/feed" element={<Feed />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </>
-  )
-}
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="/" element={<Layout />}>
+        <Route path="feed" element={<Feed />} />
+        <Route path="explore" element={<Explore />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
 
-export default App
+    </Routes>
+  );
+};
+
+export default App;

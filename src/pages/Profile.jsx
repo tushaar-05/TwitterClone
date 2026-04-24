@@ -3,11 +3,11 @@ import { ArrowLeft, BadgeCheck, Search, CalendarDays } from "lucide-react";
 
 const Profile = () => {
   return (
-    <div className="flex flex-col bg-black w-[35%] h-screen text-white">
+    <div className="flex flex-col bg-black text-white min-h-screen w-full">
 
-      {/* Pehela div */}
-      <div className="h-14 flex items-center justify-between px-4">
-        <div className="flex items-center gap-6 ">
+      {/* Header */}
+      <div className="h-14 flex items-center justify-between px-4 sticky top-0 bg-black z-10">
+        <div className="flex items-center gap-6">
           <ArrowLeft size={24} />
           <div>
             <h3 className="text-xl font-semibold">
@@ -16,17 +16,17 @@ const Profile = () => {
             <p className="text-sm text-gray-400">0 posts</p>
           </div>
         </div>
-        <Search size={24} className="hover:bg-[#181818] transition rounded-full size-5"/>
+        <Search size={24} className="hover:bg-[#181818] rounded-full size-5" />
       </div>
 
-      {/* Gray vala item */}
-      <div className="bg-[#333639] h-45"></div>
+      {/* Cover */}
+      <div className="bg-[#333639] h-44"></div>
 
-      {/* Kala vala div */}
+      {/* Profile Section */}
       <div className="bg-black relative pb-4">
 
-        {/* Apni image */}
-        <div className="absolute -top-16 left-4"> {/* Pehela div */}
+        {/* Avatar */}
+        <div className="absolute -top-16 left-4">
           <img
             src="/GoogleLogo.svg"
             alt="profile"
@@ -34,11 +34,11 @@ const Profile = () => {
           />
         </div>
 
-        {/* naam vagera */}
-        <div className="pt-5 px-4"> {/* doosra div */}
+        {/* Info */}
+        <div className="pt-5 px-4">
 
           <div className="flex justify-end">
-            <button className="border border-[#4E5F6B] rounded-full px-4 py-1 mb-4 text-sm font-semibold hover:bg-[#181818] transition">
+            <button className="border border-[#4E5F6B] rounded-full px-4 py-1 mb-4 text-sm font-semibold hover:bg-[#181818]">
               Edit profile
             </button>
           </div>
@@ -48,7 +48,7 @@ const Profile = () => {
               Saurabh Singh Airee
             </h3>
 
-            <div className="flex items-center gap-1 border border-[#536471] rounded-full px-2 py-[2px] text-sm hover:bg-[#181818] transition">
+            <div className="flex items-center gap-1 border border-[#536471] rounded-full px-2 py-[2px] text-sm hover:bg-[#181818]">
               <BadgeCheck size={16} color="#1C9BF1" />
               <span>Get verified</span>
             </div>
@@ -56,44 +56,28 @@ const Profile = () => {
 
           <p className="text-gray-400">@Sauravvbh</p>
 
-          <div className="flex items-center gap-2 text-gray-400 mt-2 cursor-pointer">
+          <div className="flex items-center gap-2 text-gray-400 mt-2">
             <CalendarDays size={16} />
             Joined July 2024
           </div>
 
-          {/* Followers and following */}
           <div className="flex gap-5 mt-2 text-gray-400">
-            0 followers   0 following
+            <span className="text-white font-semibold">0</span> followers
+            <span className="text-white font-semibold">0</span> following
           </div>
         </div>
       </div>
 
-      {/* Buttons */}
-      <div className="flex border-b border-[#2f3336] text-gray-500">
-
-        <div className="px-4 py-3 relative cursor-pointer hover:bg-[#181818]">
-          Posts
-        </div>
-
-        <div className="px-4 py-3 hover:bg-[#181818] cursor-pointer">
-          Replies
-        </div>
-
-        <div className="px-4 py-3 hover:bg-[#181818] cursor-pointer">
-          Highlights
-        </div>
-
-        <div className="px-4 py-3 hover:bg-[#181818] cursor-pointer">
-          Articles
-        </div>
-
-        <div className="px-4 py-3 hover:bg-[#181818] cursor-pointer">
-          Media
-        </div>
-
-        <div className="px-4 py-3 hover:bg-[#181818] cursor-pointer">
-          Likes
-        </div>
+      {/* Tabs */}
+      <div className="flex border-b border-[#2f3336] text-gray-500 overflow-x-auto">
+        {["Posts", "Replies", "Highlights", "Articles", "Media", "Likes"].map((tab, i) => (
+          <div
+            key={i}
+            className="px-4 py-3 hover:bg-[#181818] cursor-pointer whitespace-nowrap"
+          >
+            {tab}
+          </div>
+        ))}
       </div>
 
     </div>
