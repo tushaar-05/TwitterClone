@@ -92,8 +92,7 @@ export default function Home() {
       </div>
 
       {showSignup && (<SignupModal onClose={() => setShowSignup(false)} openLogin = {() => {setShowLogin(true)}} closeSignup = {() => setShowSignup(false)}/>)}
-      {showLogin && (<LoginModal onClose={() => setShowLogin(false)} openSignup={() => {setShowLogin(false); setShowSignup(true);}}/>
-    )}
+      {showLogin && (<LoginModal onClose={() => setShowLogin(false)} openSignup={() => {setShowLogin(false); setShowSignup(true)}}/>)}
         
     </div>
   );
