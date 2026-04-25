@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   Home, Search, Bell, Users, User, MessageCircle,
@@ -19,28 +19,13 @@ const NAV_ITEMS = [
   { label: 'More', icon: <MoreHorizontal />, path: "/more" },
 ]
 
-const getInitials = (name = '') =>
-  name.trim().split(' ').map((w) => w[0]).join('').toUpperCase().slice(0, 2)
-
 const Sidebar = () => {
   const navigate = useNavigate();
   const [showLogout, setShowLogout] = useState(false);
-  const popupRef = useRef(null);
 
   const formData = JSON.parse(localStorage.getItem('formData') || '{}');
   const fullName = formData.name;
   const handle = formData.username;
-  const initials = getInitials(fullName);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (popupRef.current && !popupRef.current.contains(e.target)) {
-        setShowLogout(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   const handleLogout = () => {
     setShowLogout(false);
@@ -82,7 +67,7 @@ const Sidebar = () => {
         Post
       </button>
 
-      <div className="mt-auto relative" ref={popupRef}>
+      <div className="mt-auto relative">
 
         {showLogout && (
           <div className="absolute bottom-full left-0 right-0 mb-2 bg-black border border-white/20 rounded-2xl shadow-lg overflow-hidden">
