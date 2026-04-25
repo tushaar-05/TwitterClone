@@ -76,8 +76,15 @@ TwitterClone/
 | Component | Description | Owner | Status |
 |-----------|-------------|-------|--------|
 | `Sidebar` | Left sidebar navigation with logo, links | **Tushar** | [ DONE ] |
+| `FeedTop` | For Yor and Following Tabs | **Tushar** | [ DONE ] |
+| `AddPost` | Add Post Section with icons | **Tushar** | [ DONE ] |
 | `Post Card` | Heading, username, image and icons | **Divyam Nailwal** | [ DONE ] |
 
+
+### Responsive
+| Component | Description | Owner | Status |
+|-----------|-------------|-------|--------|
+| `All Pages` | Responsive for mobile view | **Tushar** | [ DONE ] |
 
 
 ---
