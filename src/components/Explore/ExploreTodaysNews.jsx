@@ -40,9 +40,9 @@ const ExploreTodaysNews = () => {
 ];
 
   return (
-    <div className="w-full h-78 border-b border-[#2f3336] px-4 pt-2 flex flex-col gap-2.5">
+    <div className="w-full border-b border-[#2f3336] px-4 py-4 flex flex-col gap-2.5">
       <h1 className="font-extrabold text-xl">Today's News</h1>
-      <div className="w-full h-6/7 flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4">
         {todaysNews.map((item) => {
             return <NewsTab key={item.id} title={item.title} category={item.category} time={item.time} posts={item.posts}/>
         })}

@@ -42,7 +42,6 @@ const CategoryTrending = () => {
         {trendingData.map((item) => {
             return <TrendingTab key={item.id} id={item.id} category={item.category} location={item.location} title={item.title}/>
         })}
-        <div className='h-70'></div>
     </div>
   )
 }

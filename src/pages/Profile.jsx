@@ -7,73 +7,71 @@ const Profile = () => {
 
       {/* Header */}
       <div className="h-14 flex items-center justify-between px-4 sticky top-0 bg-black z-10">
-        <div className="flex items-center gap-6">
-          <ArrowLeft size={24} />
-          <div>
-            <h3 className="text-xl font-semibold">
+        <div className="flex items-center gap-3 sm:gap-6 min-w-0">
+          <ArrowLeft size={24} className="shrink-0" />
+          <div className="min-w-0">
+            <h3 className="text-lg sm:text-xl font-semibold truncate">
               Saurabh Singh Airee
             </h3>
             <p className="text-sm text-gray-400">0 posts</p>
           </div>
         </div>
-        <Search size={24} className="hover:bg-[#181818] rounded-full size-5" />
+        <Search size={20} className="shrink-0 hover:bg-[#181818] rounded-full p-1 cursor-pointer" />
       </div>
 
-      {/* Cover */}
-      <div className="bg-[#333639] h-44"></div>
+      {/* Banner — scales with screen width */}
+      <div className="bg-[#333639] w-full aspect-[3/1] sm:h-44 sm:aspect-auto" />
 
-      {/* Profile Section */}
+      {/* Profile info */}
       <div className="bg-black relative pb-4">
 
         {/* Avatar */}
-        <div className="absolute -top-16 left-4">
+        <div className="absolute -top-10 sm:-top-16 left-4">
           <img
             src="/GoogleLogo.svg"
             alt="profile"
-            className="w-32 h-32 rounded-full border-4 border-black object-cover"
+            className="w-20 h-20 sm:w-32 sm:h-32 rounded-full border-4 border-black object-cover"
           />
         </div>
 
-        {/* Info */}
-        <div className="pt-5 px-4">
+        <div className="pt-4 sm:pt-5 px-4">
 
           <div className="flex justify-end">
-            <button className="border border-[#4E5F6B] rounded-full px-4 py-1 mb-4 text-sm font-semibold hover:bg-[#181818]">
+            <button className="border border-[#4E5F6B] rounded-full px-4 py-1 mb-3 sm:mb-4 text-sm font-semibold hover:bg-[#181818]">
               Edit profile
             </button>
           </div>
 
-          <div className="mt-3 flex items-center gap-2 flex-wrap">
-            <h3 className="text-2xl font-bold">
+          <div className="mt-2 sm:mt-3 flex items-center gap-2 flex-wrap">
+            <h3 className="text-xl sm:text-2xl font-bold">
               Saurabh Singh Airee
             </h3>
-
-            <div className="flex items-center gap-1 border border-[#536471] rounded-full px-2 py-[2px] text-sm hover:bg-[#181818]">
+            <div className="flex items-center gap-1 border border-[#536471] rounded-full px-2 py-[2px] text-sm hover:bg-[#181818] cursor-pointer">
               <BadgeCheck size={16} color="#1C9BF1" />
               <span>Get verified</span>
             </div>
           </div>
 
-          <p className="text-gray-400">@Sauravvbh</p>
+          <p className="text-gray-400 text-sm sm:text-base">@Sauravvbh</p>
 
-          <div className="flex items-center gap-2 text-gray-400 mt-2">
-            <CalendarDays size={16} />
+          <div className="flex items-center gap-2 text-gray-400 mt-2 text-sm sm:text-base">
+            <CalendarDays size={16} className="shrink-0" />
             Joined July 2024
           </div>
 
-          <div className="flex gap-5 mt-2 text-gray-400">
-            <span className="text-white font-semibold">0</span> followers
-            <span className="text-white font-semibold">0</span> following
+          <div className="flex gap-4 sm:gap-5 mt-2 text-gray-400 text-sm sm:text-base">
+            <span><span className="text-white font-semibold">0</span> followers</span>
+            <span><span className="text-white font-semibold">0</span> following</span>
           </div>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-[#2f3336] text-gray-500 overflow-x-auto">
+      <div className="flex border-b border-[#2f3336] text-gray-500 overflow-x-auto scrollbar-hide">
         {["Posts", "Replies", "Highlights", "Articles", "Media", "Likes"].map((tab, i) => (
           <div
             key={i}
-            className="px-4 py-3 hover:bg-[#181818] cursor-pointer whitespace-nowrap"
+            className="flex-shrink-0 px-3 sm:px-4 py-3 hover:bg-[#181818] cursor-pointer whitespace-nowrap text-sm sm:text-base"
           >
             {tab}
           </div>

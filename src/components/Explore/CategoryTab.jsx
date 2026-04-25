@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CategoryTab=({ category, activeTab, setActiveTab }) => {
-  const isActive=activeTab===category;
+const CategoryTab = ({ category, activeTab, setActiveTab }) => {
+  const isActive = activeTab === category;
+
   return (
-    <div
+    <button
       onClick={() => setActiveTab(category)}
-      className={`h-full w-fit flex justify-center items-center px-4 font-bold text-sm text-[#71767b] hover:bg-white/5 transition duration-200 cursor-pointer ${isActive?"text-white border-b-4 border-[#1c9bf1]":""}`}
+      className="flex-shrink-0 flex flex-col items-center justify-center h-12 px-4 sm:px-6 relative hover:bg-white/5 transition-colors cursor-pointer"
     >
-      {category}
-    </div>
+      <span className={`text-sm sm:text-base whitespace-nowrap ${isActive ? "font-bold text-white" : "text-[#71767b]"}`}>
+        {category}
+      </span>
+      {isActive && (
+        <div className="absolute bottom-0 h-[4px] min-w-[56px] w-[60%] bg-blue-500 rounded-full" />
+      )}
+    </button>
   );
 };
 

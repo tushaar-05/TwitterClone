@@ -11,7 +11,6 @@ const CategoryForYou = () => {
       <ExploreTrending />
       <ExploreFollowSuggestions />
       <ExploreFeed />
-      <div className="h-70"></div>
     </>
   );
 };

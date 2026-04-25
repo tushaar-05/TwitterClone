@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-twitter-blue: #1d9bf0;
+  --color-twitter-gray: #71767b;
+  --color-twitter-border: #2f3336;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

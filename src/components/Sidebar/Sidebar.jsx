@@ -32,10 +32,8 @@ const Sidebar = () => {
     navigate('/');
   };
 
-  const collapsed = window.innerWidth < 1024;
-
   return (
-    <div className={`flex flex-col h-screen bg-black text-white px-2 py-2 border-r border-white/10 ${collapsed ? 'w-16 items-center' : 'w-64 px-3'}`}>
+    <div className="flex flex-col h-screen bg-black text-white px-2 py-2 border-r border-white/10 w-full items-center lg:items-start">
 
       <div className="p-2 mb-1 cursor-pointer" onClick={() => navigate("/")}>
         <img src="TwitterLogoWhite.svg" alt="Twitter Logo" className="w-8 h-8" />
@@ -49,7 +47,7 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `flex items-center gap-4 px-3 py-3 rounded-full hover:bg-white/10 transition-colors
               ${isActive ? 'font-bold' : 'font-normal'}
-              ${collapsed ? 'justify-center' : ''}`
+              justify-center lg:justify-start`
             }
           >
             <span className="relative w-6 h-6 flex items-center justify-center shrink-0">
@@ -60,23 +58,17 @@ const Sidebar = () => {
                 </span>
               )}
             </span>
-            {!collapsed && label}
+            <span className="hidden lg:block">{label}</span>
           </NavLink>
         ))}
       </nav>
 
-      {collapsed ? (
-        <button
-          className="mt-4 w-10 h-10 bg-white text-black font-bold text-xl rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
-          title="Post"
-        >
-          +
-        </button>
-      ) : (
-        <button className="mt-4 w-full bg-white text-black font-bold text-base py-3 rounded-full hover:bg-gray-200 transition-colors">
-          Post
-        </button>
-      )}
+      <button className="mt-4 lg:hidden w-10 h-10 bg-white text-black font-bold text-xl rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center">
+        +
+      </button>
+      <button className="mt-4 hidden lg:block w-full bg-white text-black font-bold text-base py-3 rounded-full hover:bg-gray-200 transition-colors">
+        Post
+      </button>
 
       <div className="mt-auto relative w-full">
         {showLogout && (
@@ -90,14 +82,14 @@ const Sidebar = () => {
               className="w-full flex items-center gap-3 px-4 py-3 text-sm hover:bg-white/10 transition-colors text-left text-red-400"
             >
               <LogOut size={16} />
-              {!collapsed && `Log out @${handle}`}
+              <span className="hidden lg:block">Log out @{handle}</span>
             </button>
           </div>
         )}
 
         <div
           onClick={() => setShowLogout(p => !p)}
-          className={`flex items-center gap-2 px-2 py-2 rounded-full hover:bg-white/10 cursor-pointer transition-colors ${collapsed ? 'justify-center' : ''}`}
+          className="flex items-center gap-2 px-2 py-2 rounded-full hover:bg-white/10 cursor-pointer transition-colors justify-center lg:justify-start"
         >
           <div className="w-9 h-9 rounded-full bg-gray-700 overflow-hidden flex-shrink-0">
             <img
@@ -106,15 +98,13 @@ const Sidebar = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          {!collapsed && (
-            <>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold truncate">{fullName}</p>
-                <p className="text-xs text-white/55 truncate">@{handle}</p>
-              </div>
-              <MoreHorizontal size={18} className="text-white/55 shrink-0" />
-            </>
-          )}
+          <div className="hidden lg:flex flex-1 min-w-0 items-center gap-2">
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-bold truncate">{fullName}</p>
+              <p className="text-xs text-white/55 truncate">@{handle}</p>
+            </div>
+            <MoreHorizontal size={18} className="text-white/55 shrink-0" />
+          </div>
         </div>
       </div>
 

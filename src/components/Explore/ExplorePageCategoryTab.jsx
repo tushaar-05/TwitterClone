@@ -5,17 +5,15 @@ const ExplorePageCategoryTab = ({ activeTab, setActiveTab }) => {
   const Categories = ["For You", "Trending", "News", "Sports", "Entertainment"];
 
   return (
-    <div className="w-full h-15 border-b border-[#2f3336] flex justify-around">
-      {Categories.map((items,idx) => {
-        return (
-          <CategoryTab
-            key={idx}
-            category={items}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-        );
-      })}
+    <div className="w-full border-b border-[#2f3336] flex overflow-x-auto scrollbar-hide">
+      {Categories.map((item, idx) => (
+        <CategoryTab
+          key={idx}
+          category={item}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+      ))}
     </div>
   );
 };

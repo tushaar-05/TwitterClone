@@ -32,9 +32,9 @@ const ExploreFollowSuggestions = () => {
     },
 ];
   return (
-    <div className="w-full h-110 border-b border-[#2f3336] px-4 pt-2">
+    <div className="w-full border-b border-[#2f3336] px-4 py-4">
       <h1 className="font-extrabold text-xl mb-4">Who to follow</h1>
-      <div className="w-full h-4/5">
+      <div className="w-full flex flex-col">
         {followData.map((item) => {
           return (
             <FollowSuggestionTab
@@ -47,7 +47,7 @@ const ExploreFollowSuggestions = () => {
           );
         })}
       </div>
-      <div className="text-sm text-[#1c9bf1] mb-1.5 hover:cursor-pointer ">
+      <div className="text-sm text-[#1c9bf1] mt-4 hover:cursor-pointer ">
         Show more
       </div>
     </div>

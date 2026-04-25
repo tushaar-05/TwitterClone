@@ -11,17 +11,21 @@ const ExploreMain = () => {
   const [activeTab, setActiveTab] = useState("For You");
 
   return (
-    <div className="pt-1">
-      <ExploreSearchbar />
-      <ExplorePageCategoryTab
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-      />
-      {activeTab === "For You" && <CategoryForYou />}
-      {activeTab === "Trending" && <CategoryTrending />}
-      {activeTab === "News" && <CategoryNews/>}
-      {activeTab === "Sports" && <CategorySports />}
-      {activeTab === "Entertainment" && <CategoryEntertainment />}
+    <div className="min-h-screen">
+      <div className="sticky top-0 z-10 bg-black/80 backdrop-blur-md">
+        <ExploreSearchbar />
+        <ExplorePageCategoryTab
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+      </div>
+      <div className="pb-20">
+        {activeTab === "For You" && <CategoryForYou />}
+        {activeTab === "Trending" && <CategoryTrending />}
+        {activeTab === "News" && <CategoryNews/>}
+        {activeTab === "Sports" && <CategorySports />}
+        {activeTab === "Entertainment" && <CategoryEntertainment />}
+      </div>
     </div>
   );
 };

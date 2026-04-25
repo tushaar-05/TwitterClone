@@ -56,7 +56,6 @@ const CategoryNews = () => {
           />
         );
       })}
-      <div className="h-70"></div>
     </div>
   );
 };

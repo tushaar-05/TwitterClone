@@ -49,7 +49,6 @@ const entertainmentData = [
             time={item.time}
             posts={item.posts}/>
         })}
-        <div className='h-70'></div>
     </div>
   )
 }
