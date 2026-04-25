@@ -1,16 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from "react-router-dom";
 import {
-  Home,
-  Search,
-  Bell,
-  Users,
-  User,
-  MessageCircle,
-  Bookmark,
-  Rocket,
-  MoreHorizontal,
-  Sparkles
+  Home, Search, Bell, Users, User, MessageCircle,
+  Bookmark, Rocket, MoreHorizontal, Sparkles, LogOut
 } from 'lucide-react'
 
 const NAV_ITEMS = [
@@ -29,10 +21,20 @@ const NAV_ITEMS = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const [showLogout, setShowLogout] = useState(false);
+
+  const formData = JSON.parse(localStorage.getItem('formData') || '{}');
+  const fullName = formData.name;
+  const handle = formData.username;
+
+  const handleLogout = () => {
+    setShowLogout(false);
+    navigate('/');
+  };
 
   return (
     <div className="flex flex-col h-screen w-64 bg-black text-white px-3 py-2">
-      
+
       <div className="p-3 mb-1 cursor-pointer" onClick={() => navigate("/")}>
         <img src="TwitterLogoWhite.svg" alt="Twitter Logo" className="w-8 h-8" />
       </div>
@@ -65,14 +67,42 @@ const Sidebar = () => {
         Post
       </button>
 
-      <div className="mt-auto flex items-center gap-2 px-3 py-2 rounded-full hover:bg-white/10 cursor-pointer transition-colors">
-        <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center font-bold text-sm flex-shrink-0">
-          TS
+      <div className="mt-auto relative">
+
+        {showLogout && (
+          <div className="absolute bottom-full left-0 right-0 mb-2 bg-black border border-white/20 rounded-2xl shadow-lg overflow-hidden">
+            <div className="px-4 py-3 border-b border-white/10">
+              <p className="text-sm font-bold">{fullName}</p>
+              <p className="text-xs text-white/55">@{handle}</p>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center gap-3 px-4 py-3 text-sm hover:bg-white/10 transition-colors text-left text-red-400"
+            >
+              <LogOut size={16} />
+              Log out @{handle}
+            </button>
+          </div>
+        )}
+
+        <div
+          onClick={() => setShowLogout((p) => !p)}
+          className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
+        >
+          <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden flex-shrink-0">
+            <img
+              src={formData.profilePic || "/profilepic.svg"}
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold truncate">{fullName}</p>
+            <p className="text-xs text-white/55 truncate">@{handle}</p>
+          </div>
+          <MoreHorizontal size={18} className="text-white/55 shrink-0" />
         </div>
-        <div className="flex-1">
-          <p className="text-sm font-bold">Tushar Singh</p>
-          <p className="text-xs text-white/55">@tushaar_05</p>
-        </div>
+
       </div>
 
     </div>

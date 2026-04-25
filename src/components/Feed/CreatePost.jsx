@@ -19,9 +19,15 @@ export default function CreatePost() {
   const isDisabled = text.length === 0 || remaining < 0;
 
   return (
-    <div className="w-full max-w-2xl mx-auto border border-gray-800 bg-black text-white rounded-2xl p-4">
+    <div className="w-full max-w-2xl mx-auto border border-gray-800 bg-black text-white p-4">
       <div className="flex gap-3">
-        <div className="w-10 h-10 rounded-full bg-gray-700 flex-shrink-0" />
+        <div className="w-10 h-10 rounded-full bg-gray-700 flex-shrink-0 overflow-hidden">
+          <img
+            className="w-full h-full object-cover"
+            src="/profilepic.svg"
+            alt="Profile"
+          />
+        </div>
         <div className="flex-1">
           <textarea
             value={text}
