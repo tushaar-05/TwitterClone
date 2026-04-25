@@ -5,7 +5,6 @@ const Profile = () => {
   return (
     <div className="flex flex-col bg-black text-white min-h-screen w-full">
 
-      {/* Header */}
       <div className="h-14 flex items-center justify-between px-4 sticky top-0 bg-black z-10">
         <div className="flex items-center gap-3 sm:gap-6 min-w-0">
           <ArrowLeft size={24} className="shrink-0" />
@@ -19,13 +18,10 @@ const Profile = () => {
         <Search size={20} className="shrink-0 hover:bg-[#181818] rounded-full p-1 cursor-pointer" />
       </div>
 
-      {/* Banner — scales with screen width */}
       <div className="bg-[#333639] w-full aspect-[3/1] sm:h-44 sm:aspect-auto" />
 
-      {/* Profile info */}
       <div className="bg-black relative pb-4">
 
-        {/* Avatar */}
         <div className="absolute -top-10 sm:-top-16 left-4">
           <img
             src="/GoogleLogo.svg"
@@ -66,7 +62,6 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* Tabs */}
       <div className="flex border-b border-[#2f3336] text-gray-500 overflow-x-auto scrollbar-hide">
         {["Posts", "Replies", "Highlights", "Articles", "Media", "Likes"].map((tab, i) => (
           <div
